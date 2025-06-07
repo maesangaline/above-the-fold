@@ -22,8 +22,6 @@ import {
   Activity,
 } from "lucide-react"
 
-// Remove the incorrect plugin code
-
 interface HeroSection {
   id: string
   title: string
@@ -47,7 +45,7 @@ const heroSets = [
       animationType: "Floating Geometric Shapes",
       category: "geometric",
       icon: <Grid3X3 className="w-5 h-5" />,
-      description: "Animated geometric shapes float and rotate in the background",
+      description: "Animated geometric shapes float and rotate in the background with smooth parallax motion",
       code: `<div className="relative h-96 bg-gradient-to-br from-blue-500 to-purple-600 overflow-hidden">
   <div className="absolute inset-0">
     <div className="absolute top-4 left-4 w-8 h-8 bg-white/20 rounded-full animate-bounce" />
@@ -63,20 +61,27 @@ const heroSets = [
 </div>`,
     },
     {
-      id: "pulsing-gradient",
-      title: "Innovation Meets Excellence",
-      subtitle: "Discover cutting-edge solutions that drive your business forward",
-      cta: "Explore Solutions",
-      animationType: "Pulsing Gradient",
-      category: "gradient",
-      icon: <Waves className="w-5 h-5" />,
-      description: "Dynamic gradient background with smooth pulsing animation",
-      code: `<div className="relative h-96 bg-gradient-to-r from-pink-500 to-orange-500 overflow-hidden animate-pulse">
+      id: "geometric-grid",
+      title: "Geometric Precision",
+      subtitle: "Where mathematics meets beautiful design",
+      cta: "Explore Patterns",
+      animationType: "Animated Geometric Grid",
+      category: "geometric",
+      icon: <Grid3X3 className="w-5 h-5" />,
+      description: "Dynamic geometric grid with rotating and scaling elements creating mesmerizing patterns",
+      code: `<div className="relative h-96 bg-gradient-to-br from-indigo-600 to-purple-700 overflow-hidden">
+  <div className="absolute inset-0">
+    <div className="grid grid-cols-8 grid-rows-6 h-full w-full gap-2 p-4">
+      {Array.from({length: 48}).map((_, i) => (
+        <div key={i} className="bg-white/10 rounded animate-pulse" style={{animationDelay: \`\${i * 0.1}s\`}} />
+      ))}
+    </div>
+  </div>
   <div className="absolute inset-0 flex items-center justify-center text-center text-white p-8">
-    <div className="space-y-4">
-      <h1 className="text-5xl font-bold">Innovation Meets Excellence</h1>
-      <p className="text-xl opacity-90">Discover cutting-edge solutions that drive your business forward</p>
-      <button className="bg-white text-black px-8 py-3 rounded-lg font-semibold">Explore Solutions</button>
+    <div className="space-y-4 bg-black/20 backdrop-blur-sm rounded-2xl p-8">
+      <h1 className="text-5xl font-bold">Geometric Precision</h1>
+      <p className="text-xl opacity-90">Where mathematics meets beautiful design</p>
+      <button className="bg-white text-black px-8 py-3 rounded-lg font-semibold">Explore Patterns</button>
     </div>
   </div>
 </div>`,
@@ -89,7 +94,7 @@ const heroSets = [
       animationType: "Animated Stars",
       category: "particles",
       icon: <Star className="w-5 h-5" />,
-      description: "Twinkling star particles that move and fade in space",
+      description: "Twinkling star particles that move and fade in space with realistic stellar motion",
       code: `<div className="relative h-96 bg-gradient-to-b from-indigo-900 to-purple-900 overflow-hidden">
   <div className="absolute inset-0">
     <div className="absolute top-8 left-8 w-2 h-2 bg-white rounded-full animate-ping" />
@@ -112,7 +117,7 @@ const heroSets = [
       animationType: "Electric Grid",
       category: "techy",
       icon: <Zap className="w-5 h-5" />,
-      description: "High-tech electrical grid with pulsing energy lines",
+      description: "High-tech electrical grid with pulsing energy lines and circuit-like animations",
       code: `<div className="relative h-96 bg-gradient-to-br from-cyan-900 to-blue-900 overflow-hidden">
   <div className="absolute inset-0 opacity-30">
     <div className="grid grid-cols-12 grid-rows-8 h-full w-full gap-px">
@@ -138,7 +143,7 @@ const heroSets = [
       animationType: "Morphing Blobs",
       category: "organic",
       icon: <Sparkles className="w-5 h-5" />,
-      description: "Organic blob shapes that continuously morph and change",
+      description: "Organic blob shapes that continuously morph and change with fluid animations",
       code: `<div className="relative h-96 bg-gradient-to-bl from-violet-500 to-pink-500 overflow-hidden">
   <div className="absolute inset-0">
     <div className="absolute top-4 right-4 w-16 h-16 bg-white/20 rounded-full animate-pulse" />
@@ -161,7 +166,7 @@ const heroSets = [
       animationType: "Circuit Pulse",
       category: "techy",
       icon: <Cpu className="w-5 h-5" />,
-      description: "Circuit board patterns with pulsing electrical signals",
+      description: "Circuit board patterns with pulsing electrical signals and data flow visualization",
       code: `<div className="relative h-96 bg-gradient-to-tr from-green-900 to-emerald-900 overflow-hidden">
   <div className="absolute inset-0">
     <svg className="w-full h-full opacity-40" viewBox="0 0 400 300">
@@ -190,7 +195,7 @@ const heroSets = [
       animationType: "Digital Rain",
       category: "techy",
       icon: <Code className="w-5 h-5" />,
-      description: "Matrix-style digital rain effect with flowing code",
+      description: "Matrix-style digital rain effect with flowing code and cyber aesthetics",
       code: `<div className="relative h-96 bg-black overflow-hidden">
   <div className="absolute inset-0">
     <div className="absolute top-0 left-8 w-px h-full bg-gradient-to-b from-green-400 to-transparent animate-pulse" />
@@ -214,7 +219,7 @@ const heroSets = [
       animationType: "Holographic Display",
       category: "techy",
       icon: <Radio className="w-5 h-5" />,
-      description: "Futuristic holographic display with scanning lines",
+      description: "Futuristic holographic display with scanning lines and projection effects",
       code: `<div className="relative h-96 bg-gradient-to-b from-blue-900 to-purple-900 overflow-hidden">
   <div className="absolute inset-0">
     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-400/20 to-transparent animate-pulse" />
@@ -238,7 +243,7 @@ const heroSets = [
       animationType: "Data Stream",
       category: "techy",
       icon: <Activity className="w-5 h-5" />,
-      description: "Flowing data streams with real-time analytics visualization",
+      description: "Flowing data streams with real-time analytics visualization and dynamic charts",
       code: `<div className="relative h-96 bg-gradient-to-r from-slate-900 to-blue-900 overflow-hidden">
   <div className="absolute inset-0">
     <div className="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-400 to-transparent animate-pulse" />
@@ -262,7 +267,7 @@ const heroSets = [
       animationType: "Cyber Grid",
       category: "techy",
       icon: <Wifi className="w-5 h-5" />,
-      description: "Cyberpunk-style grid with security scanning effects",
+      description: "Cyberpunk-style grid with security scanning effects and threat detection",
       code: `<div className="relative h-96 bg-gradient-to-br from-red-900 to-orange-900 overflow-hidden">
   <div className="absolute inset-0 opacity-40">
     <div className="grid grid-cols-16 grid-rows-12 h-full w-full gap-px">
@@ -288,7 +293,7 @@ const heroSets = [
       animationType: "Neon Circuit",
       category: "techy",
       icon: <Zap className="w-5 h-5" />,
-      description: "Glowing neon circuit traces with electrical pulses",
+      description: "Glowing neon circuit traces with electrical pulses and energy flow",
       code: `<div className="relative h-96 bg-black overflow-hidden">
   <div className="absolute inset-0">
     <svg className="w-full h-full" viewBox="0 0 400 300">
@@ -314,7 +319,7 @@ const heroSets = [
       animationType: "Quantum Field",
       category: "techy",
       icon: <Sparkles className="w-5 h-5" />,
-      description: "Quantum field visualization with particle interactions",
+      description: "Quantum field visualization with particle interactions and quantum effects",
       code: `<div className="relative h-96 bg-gradient-to-r from-purple-900 to-indigo-900 overflow-hidden">
   <div className="absolute inset-0">
     <div className="absolute top-8 left-8 w-3 h-3 bg-purple-400 rounded-full animate-ping" />
@@ -342,7 +347,7 @@ const heroSets = [
       animationType: "Wave Motion",
       category: "organic",
       icon: <Waves className="w-5 h-5" />,
-      description: "Smooth wave animations flow across the background",
+      description: "Smooth wave animations flow across the background with ocean-like motion",
       code: `<div className="relative h-96 bg-gradient-to-b from-cyan-500 to-blue-600 overflow-hidden">
   <div className="absolute inset-0">
     <svg className="w-full h-full" viewBox="0 0 400 300" preserveAspectRatio="none">
@@ -367,7 +372,7 @@ const heroSets = [
       animationType: "Particle Flow",
       category: "particles",
       icon: <Sparkles className="w-5 h-5" />,
-      description: "Particles flow in smooth, curved trajectories",
+      description: "Particles flow in smooth, curved trajectories creating dynamic movement patterns",
       code: `<div className="relative h-96 bg-gradient-to-br from-emerald-500 to-cyan-500 overflow-hidden">
   <div className="absolute inset-0">
     <div className="absolute top-4 left-4 w-2 h-2 bg-white rounded-full animate-bounce" />
@@ -391,7 +396,7 @@ const heroSets = [
       animationType: "Aurora Borealis",
       category: "organic",
       icon: <Star className="w-5 h-5" />,
-      description: "Aurora-like flowing lights across the night sky",
+      description: "Aurora-like flowing lights across the night sky with ethereal color shifts",
       code: `<div className="relative h-96 bg-gradient-to-b from-indigo-900 to-green-900 overflow-hidden">
   <div className="absolute inset-0">
     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-green-400/30 to-transparent animate-pulse" style={{transform: 'skewY(-10deg)'}} />
@@ -414,7 +419,7 @@ const heroSets = [
       animationType: "Crystal Formation",
       category: "geometric",
       icon: <Grid3X3 className="w-5 h-5" />,
-      description: "Geometric crystal formations with prismatic effects",
+      description: "Geometric crystal formations with prismatic effects and light refraction",
       code: `<div className="relative h-96 bg-gradient-to-br from-purple-600 to-pink-600 overflow-hidden">
   <div className="absolute inset-0">
     <div className="absolute top-8 left-8 w-0 h-0 border-l-8 border-r-8 border-b-16 border-l-transparent border-r-transparent border-b-white/30 animate-pulse" />
@@ -438,10 +443,10 @@ const heroSets = [
       animationType: "Liquid Mercury",
       category: "organic",
       icon: <Waves className="w-5 h-5" />,
-      description: "Metallic liquid effects with surface tension dynamics",
+      description: "Metallic liquid effects with surface tension dynamics and fluid motion",
       code: `<div className="relative h-96 bg-gradient-to-r from-gray-800 to-gray-900 overflow-hidden">
   <div className="absolute inset-0">
-    <div className="absolute top-1/3 left-0 w-full h-16 bg-gradient-to-r from-transparent via-silver-400/40 to-transparent animate-pulse" style={{borderRadius: '50%'}} />
+    <div className="absolute top-1/3 left-0 w-full h-16 bg-gradient-to-r from-transparent via-gray-400/40 to-transparent animate-pulse" style={{borderRadius: '50%'}} />
     <div className="absolute bottom-1/3 left-0 w-full h-12 bg-gradient-to-r from-transparent via-gray-400/30 to-transparent animate-pulse" style={{borderRadius: '50%', animationDelay: '0.5s'}} />
   </div>
   <div className="absolute inset-0 flex items-center justify-center text-center text-white p-8">
@@ -461,7 +466,7 @@ const heroSets = [
       animationType: "Plasma Energy",
       category: "techy",
       icon: <Zap className="w-5 h-5" />,
-      description: "High-energy plasma effects with electrical arcs",
+      description: "High-energy plasma effects with electrical arcs and fusion reactions",
       code: `<div className="relative h-96 bg-gradient-to-r from-purple-900 to-blue-900 overflow-hidden">
   <div className="absolute inset-0">
     <div className="absolute top-1/2 left-1/2 w-32 h-32 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-r from-purple-400 to-pink-400 animate-pulse" style={{filter: 'blur(20px)'}} />
@@ -487,7 +492,7 @@ const heroSets = [
       animationType: "Typing Animation",
       category: "text",
       icon: <Code className="w-5 h-5" />,
-      description: "Text appears with realistic typing animation effect",
+      description: "Text appears with realistic typing animation effect and cursor blinking",
       code: `<div className="relative h-96 bg-gradient-to-r from-gray-800 to-gray-900 overflow-hidden">
   <div className="absolute inset-0 flex items-center justify-center text-center text-white p-8">
     <div className="space-y-4">
@@ -509,7 +514,7 @@ const heroSets = [
       animationType: "Constellation",
       category: "particles",
       icon: <Star className="w-5 h-5" />,
-      description: "Connected dots form constellation patterns",
+      description: "Connected dots form constellation patterns with animated line connections",
       code: `<div className="relative h-96 bg-gradient-to-t from-slate-900 to-blue-900 overflow-hidden">
   <div className="absolute inset-0">
     <svg className="w-full h-full" viewBox="0 0 400 300">
@@ -537,7 +542,7 @@ const heroSets = [
       animationType: "Minimal Gradient",
       category: "gradient",
       icon: <Sparkles className="w-5 h-5" />,
-      description: "Clean gradient transitions with subtle animations",
+      description: "Clean gradient transitions with subtle animations and elegant simplicity",
       code: `<div className="relative h-96 bg-gradient-to-br from-slate-100 to-slate-300 overflow-hidden">
   <div className="absolute inset-0 bg-gradient-to-tr from-transparent to-white/20 animate-pulse" />
   <div className="absolute inset-0 flex items-center justify-center text-center text-slate-800 p-8">
@@ -557,7 +562,7 @@ const heroSets = [
       animationType: "Paper Fold",
       category: "geometric",
       icon: <Grid3X3 className="w-5 h-5" />,
-      description: "Origami-inspired folding paper effects",
+      description: "Origami-inspired folding paper effects with dimensional transformations",
       code: `<div className="relative h-96 bg-gradient-to-br from-orange-100 to-red-200 overflow-hidden">
   <div className="absolute inset-0">
     <div className="absolute top-8 left-8 w-16 h-16 bg-white/60 transform rotate-45 animate-pulse" />
@@ -581,7 +586,7 @@ const heroSets = [
       animationType: "Ink Splash",
       category: "organic",
       icon: <Sparkles className="w-5 h-5" />,
-      description: "Dynamic ink splash effects with organic flow",
+      description: "Dynamic ink splash effects with organic flow and artistic expression",
       code: `<div className="relative h-96 bg-white overflow-hidden">
   <div className="absolute inset-0">
     <div className="absolute top-8 left-8 w-24 h-24 bg-black/20 rounded-full animate-pulse" style={{clipPath: 'polygon(50% 0%, 80% 10%, 100% 35%, 85% 70%, 50% 100%, 15% 70%, 0% 35%, 20% 10%)'}} />
@@ -604,7 +609,7 @@ const heroSets = [
       animationType: "Glass Morphism",
       category: "gradient",
       icon: <Eye className="w-5 h-5" />,
-      description: "Frosted glass effects with backdrop blur",
+      description: "Frosted glass effects with backdrop blur and translucent layers",
       code: `<div className="relative h-96 bg-gradient-to-br from-blue-400 to-purple-500 overflow-hidden">
   <div className="absolute inset-0">
     <div className="absolute top-8 left-8 w-32 h-32 bg-white/20 backdrop-blur-sm rounded-2xl animate-pulse" />
@@ -630,7 +635,7 @@ const heroSets = [
       animationType: "Retro Grid",
       category: "geometric",
       icon: <Grid3X3 className="w-5 h-5" />,
-      description: "80s-style neon grid with perspective effects",
+      description: "80s-style neon grid with perspective effects and synthwave aesthetics",
       code: `<div className="relative h-96 bg-gradient-to-b from-purple-900 to-black overflow-hidden">
   <div className="absolute inset-0" style={{perspective: '1000px'}}>
     <div className="absolute inset-0 bg-gradient-to-b from-transparent to-purple-500/20" style={{transform: 'rotateX(60deg) translateZ(-100px)'}}>
@@ -658,7 +663,7 @@ const heroSets = [
       animationType: "VHS Glitch",
       category: "glitch",
       icon: <Radio className="w-5 h-5" />,
-      description: "VHS-style glitch effects with scan lines",
+      description: "VHS-style glitch effects with scan lines and analog distortion",
       code: `<div className="relative h-96 bg-black overflow-hidden">
   <div className="absolute inset-0">
     <div className="absolute inset-0 bg-gradient-to-b from-transparent via-red-500/10 to-transparent animate-pulse" />
@@ -683,7 +688,7 @@ const heroSets = [
       animationType: "Neon Sign",
       category: "techy",
       icon: <Zap className="w-5 h-5" />,
-      description: "Classic neon sign effects with flickering lights",
+      description: "Classic neon sign effects with flickering lights and electric glow",
       code: `<div className="relative h-96 bg-black overflow-hidden">
   <div className="absolute inset-0">
     <div className="absolute top-8 left-8 w-4 h-4 bg-pink-400 rounded-full animate-ping" style={{filter: 'blur(2px) drop-shadow(0 0 10px #ff1493)'}} />
@@ -707,7 +712,7 @@ const heroSets = [
       animationType: "Synthwave Sunset",
       category: "gradient",
       icon: <Star className="w-5 h-5" />,
-      description: "80s synthwave aesthetic with gradient sunset",
+      description: "80s synthwave aesthetic with gradient sunset and retro-futuristic vibes",
       code: `<div className="relative h-96 bg-gradient-to-b from-purple-900 via-pink-500 to-orange-400 overflow-hidden">
   <div className="absolute inset-0">
     <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black/50 to-transparent" />
@@ -738,7 +743,7 @@ const heroSets = [
       animationType: "Arcade Cabinet",
       category: "geometric",
       icon: <Grid3X3 className="w-5 h-5" />,
-      description: "Retro arcade-style pixelated animations",
+      description: "Retro arcade-style pixelated animations with 8-bit aesthetics",
       code: `<div className="relative h-96 bg-gradient-to-b from-blue-900 to-black overflow-hidden">
   <div className="absolute inset-0">
     <div className="absolute top-8 left-8 w-8 h-8 bg-yellow-400 animate-pulse" style={{clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)'}} />
@@ -763,12 +768,12 @@ const heroSets = [
       animationType: "Cassette Tape",
       category: "organic",
       icon: <Radio className="w-5 h-5" />,
-      description: "Spinning cassette reels with magnetic tape flow",
-      code: `<div className="relative h-96 bg-gradient-to-r from-brown-800 to-orange-900 overflow-hidden">
+      description: "Spinning cassette reels with magnetic tape flow and vintage audio aesthetics",
+      code: `<div className="relative h-96 bg-gradient-to-r from-amber-800 to-orange-900 overflow-hidden">
   <div className="absolute inset-0">
     <div className="absolute top-1/2 left-1/4 w-16 h-16 -translate-y-1/2 border-4 border-white/30 rounded-full animate-spin" style={{animationDuration: '3s'}} />
     <div className="absolute top-1/2 right-1/4 w-16 h-16 -translate-y-1/2 border-4 border-white/30 rounded-full animate-spin" style={{animationDuration: '3s', animationDirection: 'reverse'}} />
-    <div className="absolute top-1/2 left-1/4 right-1/4 h-1 bg-brown-600 -translate-y-1/2" />
+    <div className="absolute top-1/2 left-1/4 right-1/4 h-1 bg-amber-600 -translate-y-1/2" />
   </div>
   <div className="absolute inset-0 flex items-center justify-center text-center text-white p-8">
     <div className="space-y-4">
@@ -790,7 +795,7 @@ const heroSets = [
       animationType: "Paint Strokes",
       category: "organic",
       icon: <Sparkles className="w-5 h-5" />,
-      description: "Dynamic paint brush strokes with artistic flair",
+      description: "Dynamic paint brush strokes with artistic flair and creative energy",
       code: `<div className="relative h-96 bg-white overflow-hidden">
   <div className="absolute inset-0">
     <div className="absolute top-8 left-8 w-32 h-4 bg-red-400/60 transform -rotate-12 animate-pulse" style={{borderRadius: '50px'}} />
@@ -814,7 +819,7 @@ const heroSets = [
       animationType: "Kaleidoscope",
       category: "geometric",
       icon: <Star className="w-5 h-5" />,
-      description: "Kaleidoscopic patterns with rotating symmetry",
+      description: "Kaleidoscopic patterns with rotating symmetry and fractal-like beauty",
       code: `<div className="relative h-96 bg-gradient-to-r from-purple-600 to-pink-600 overflow-hidden">
   <div className="absolute inset-0">
     <div className="absolute top-1/2 left-1/2 w-32 h-32 -translate-x-1/2 -translate-y-1/2 animate-spin" style={{animationDuration: '10s'}}>
@@ -840,7 +845,7 @@ const heroSets = [
       animationType: "Watercolor Blend",
       category: "organic",
       icon: <Waves className="w-5 h-5" />,
-      description: "Soft watercolor blending effects with organic flow",
+      description: "Soft watercolor blending effects with organic flow and artistic gradients",
       code: `<div className="relative h-96 bg-gradient-to-br from-blue-200 to-purple-200 overflow-hidden">
   <div className="absolute inset-0">
     <div className="absolute top-8 left-8 w-24 h-24 bg-blue-300/50 rounded-full animate-pulse" style={{filter: 'blur(10px)'}} />
@@ -864,7 +869,7 @@ const heroSets = [
       animationType: "Geometric Mandala",
       category: "geometric",
       icon: <Grid3X3 className="w-5 h-5" />,
-      description: "Intricate mandala patterns with rotating geometry",
+      description: "Intricate mandala patterns with rotating geometry and spiritual symmetry",
       code: `<div className="relative h-96 bg-gradient-to-r from-indigo-800 to-purple-800 overflow-hidden">
   <div className="absolute inset-0">
     <div className="absolute top-1/2 left-1/2 w-40 h-40 -translate-x-1/2 -translate-y-1/2 animate-spin" style={{animationDuration: '20s'}}>
@@ -892,7 +897,7 @@ const heroSets = [
       animationType: "Abstract Shapes",
       category: "geometric",
       icon: <Sparkles className="w-5 h-5" />,
-      description: "Free-form abstract shapes with dynamic movement",
+      description: "Free-form abstract shapes with dynamic movement and creative expression",
       code: `<div className="relative h-96 bg-gradient-to-br from-yellow-400 to-red-500 overflow-hidden">
   <div className="absolute inset-0">
     <div className="absolute top-8 left-8 w-16 h-24 bg-white/30 transform rotate-45 animate-pulse" style={{borderRadius: '30% 70% 70% 30% / 30% 30% 70% 70%'}} />
@@ -916,7 +921,7 @@ const heroSets = [
       animationType: "Spiral Galaxy",
       category: "particles",
       icon: <Star className="w-5 h-5" />,
-      description: "Swirling galaxy arms with stellar particles",
+      description: "Swirling galaxy arms with stellar particles and cosmic motion",
       code: `<div className="relative h-96 bg-gradient-to-r from-black to-purple-900 overflow-hidden">
   <div className="absolute inset-0">
     <div className="absolute top-1/2 left-1/2 w-48 h-48 -translate-x-1/2 -translate-y-1/2 animate-spin" style={{animationDuration: '30s'}}>
@@ -1008,7 +1013,7 @@ export default function AboveTheFold() {
           {currentHeros.map((hero, index) => (
             <Card
               key={hero.id}
-              className="group cursor-pointer transition-all duration-300 hover:shadow-md hover:translate-y-[-2px] focus-within:ring-2 focus-within:ring-purple-500"
+              className="group cursor-pointer transition-all duration-300 hover:shadow-lg hover:translate-y-[-4px] focus-within:ring-2 focus-within:ring-purple-500"
               onClick={() => setSelectedHero(hero)}
               onKeyDown={(e) => {
                 if (e.key === "Enter" || e.key === " ") {
@@ -1027,7 +1032,7 @@ export default function AboveTheFold() {
                     {getAnimationElements(hero.id, prefersReducedMotion)}
                   </div>
                   <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
-                    <Eye className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <Eye className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
                 </div>
 
@@ -1047,7 +1052,7 @@ export default function AboveTheFold() {
                         e.stopPropagation()
                         generateSimilar(hero.id)
                       }}
-                      className="w-full"
+                      className="w-full hover:bg-purple-50 hover:border-purple-300 transition-colors duration-200"
                     >
                       Generate Similar
                     </Button>
@@ -1063,7 +1068,7 @@ export default function AboveTheFold() {
           <Button
             onClick={generateNewSet}
             size="lg"
-            className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700"
+            className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 transition-all duration-300 hover:scale-105"
           >
             <RefreshCw className="w-5 h-5 mr-2" />
             Generate Fresh Set
@@ -1092,7 +1097,7 @@ export default function AboveTheFold() {
                   <div className="space-y-4 max-w-2xl">
                     <h2 className="text-4xl md:text-5xl font-bold">{selectedHero.title}</h2>
                     <p className="text-xl opacity-90">{selectedHero.subtitle}</p>
-                    <Button size="lg" className="bg-white text-black hover:bg-gray-100">
+                    <Button size="lg" className="bg-white text-black hover:bg-gray-100 transition-colors duration-200">
                       {selectedHero.cta}
                     </Button>
                   </div>
@@ -1109,15 +1114,26 @@ export default function AboveTheFold() {
               <div className="flex gap-3 flex-wrap">
                 <Button
                   onClick={() => forkToV0(selectedHero)}
-                  className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700"
+                  className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 transition-all duration-300"
                 >
                   <GitFork className="w-4 h-4 mr-2" />
                   Fork to v0
                 </Button>
-                <Button onClick={() => generateSimilar(selectedHero.id)} variant="outline">
+                <Button
+                  onClick={() => {
+                    generateSimilar(selectedHero.id)
+                    setSelectedHero(null)
+                  }}
+                  variant="outline"
+                  className="hover:bg-purple-50 hover:border-purple-300 transition-colors duration-200"
+                >
                   Generate Similar
                 </Button>
-                <Button onClick={() => setSelectedHero(null)} variant="secondary">
+                <Button
+                  onClick={() => setSelectedHero(null)}
+                  variant="secondary"
+                  className="hover:bg-gray-200 transition-colors duration-200"
+                >
                   Close Preview
                 </Button>
               </div>
@@ -1132,7 +1148,7 @@ export default function AboveTheFold() {
 function getPreviewBackground(id: string): string {
   const backgrounds = {
     "floating-shapes": "bg-gradient-to-br from-blue-500 to-purple-600",
-    "pulsing-gradient": "bg-gradient-to-r from-pink-500 to-orange-500",
+    "geometric-grid": "bg-gradient-to-br from-indigo-600 to-purple-700",
     "particle-stars": "bg-gradient-to-b from-indigo-900 to-purple-900",
     "electric-grid": "bg-gradient-to-br from-cyan-900 to-blue-900",
     "morphing-blobs": "bg-gradient-to-bl from-violet-500 to-pink-500",
@@ -1160,7 +1176,7 @@ function getPreviewBackground(id: string): string {
     "neon-sign": "bg-black",
     "synthwave-sunset": "bg-gradient-to-b from-purple-900 via-pink-500 to-orange-400",
     "arcade-cabinet": "bg-gradient-to-b from-blue-900 to-black",
-    "cassette-tape": "bg-gradient-to-r from-brown-800 to-orange-900",
+    "cassette-tape": "bg-gradient-to-r from-amber-800 to-orange-900",
     "paint-strokes": "bg-white",
     kaleidoscope: "bg-gradient-to-r from-purple-600 to-pink-600",
     "watercolor-blend": "bg-gradient-to-br from-blue-200 to-purple-200",
@@ -1173,7 +1189,8 @@ function getPreviewBackground(id: string): string {
 
 function getAnimationClass(id: string): string {
   if (id.includes("pulse") || id.includes("gradient")) return "animate-pulse"
-  if (id.includes("spin") || id.includes("galaxy")) return "animate-spin"
+  if (id.includes("spin") || id.includes("galaxy") || id.includes("kaleidoscope") || id.includes("mandala"))
+    return "animate-spin"
   return ""
 }
 
@@ -1185,73 +1202,124 @@ function getAnimationElements(id: string, prefersReducedMotion: boolean) {
       return (
         <>
           <div
-            className="absolute top-4 left-4 w-8 h-8 bg-white/20 rounded-full animate-bounce"
-            style={{ animationDuration: "3s" }}
+            className="absolute top-4 left-4 w-12 h-12 bg-white/30 rounded-lg animate-bounce"
+            style={{ animationDuration: "2s" }}
           />
           <div
-            className="absolute top-12 right-8 w-6 h-6 bg-white/30 rotate-45 animate-bounce"
-            style={{ animationDelay: "0.5s", animationDuration: "3.5s" }}
+            className="absolute top-12 right-8 w-8 h-8 bg-white/40 rotate-45 animate-bounce"
+            style={{ animationDelay: "0.5s", animationDuration: "2.5s" }}
           />
           <div
-            className="absolute bottom-8 left-12 w-10 h-10 bg-white/15 rounded-full animate-bounce"
-            style={{ animationDelay: "1s", animationDuration: "4s" }}
+            className="absolute bottom-8 left-12 w-16 h-6 bg-white/25 rounded-full animate-bounce"
+            style={{ animationDelay: "1s", animationDuration: "3s" }}
+          />
+          <div
+            className="absolute bottom-16 right-16 w-6 h-12 bg-white/35 rounded-lg animate-bounce"
+            style={{ animationDelay: "1.5s", animationDuration: "2.2s" }}
           />
         </>
       )
-    case "particle-stars":
+    case "geometric-grid":
       return (
-        <>
-          <div
-            className="absolute top-8 left-8 w-2 h-2 bg-white rounded-full animate-ping"
-            style={{ animationDuration: "3s" }}
-          />
-          <div
-            className="absolute top-16 right-12 w-1 h-1 bg-white rounded-full animate-ping"
-            style={{ animationDelay: "0.5s", animationDuration: "3.5s" }}
-          />
-          <div
-            className="absolute bottom-12 left-16 w-2 h-2 bg-white rounded-full animate-ping"
-            style={{ animationDelay: "1s", animationDuration: "4s" }}
-          />
-          <div
-            className="absolute bottom-8 right-8 w-1 h-1 bg-white rounded-full animate-ping"
-            style={{ animationDelay: "1.5s", animationDuration: "3.8s" }}
-          />
-        </>
-      )
-    case "electric-grid":
-      return (
-        <div className="absolute inset-0 opacity-30">
-          <div className="grid grid-cols-12 grid-rows-8 h-full w-full gap-px">
-            {Array.from({ length: 96 }).map((_, i) => (
+        <div className="absolute inset-0">
+          <div className="grid grid-cols-8 grid-rows-6 h-full w-full gap-2 p-4">
+            {Array.from({ length: 48 }).map((_, i) => (
               <div
                 key={i}
-                className="border border-cyan-400/30 animate-pulse"
-                style={{ animationDelay: `${i * 0.05}s`, animationDuration: "3s" }}
+                className="bg-white/20 rounded animate-pulse"
+                style={{ animationDelay: `${i * 0.1}s`, animationDuration: "2s" }}
               />
             ))}
           </div>
         </div>
       )
+    case "particle-stars":
+      return (
+        <>
+          <div
+            className="absolute top-8 left-8 w-3 h-3 bg-white rounded-full animate-ping"
+            style={{ animationDuration: "2s" }}
+          />
+          <div
+            className="absolute top-16 right-12 w-2 h-2 bg-white rounded-full animate-ping"
+            style={{ animationDelay: "0.5s", animationDuration: "2.5s" }}
+          />
+          <div
+            className="absolute bottom-12 left-16 w-4 h-4 bg-white rounded-full animate-ping"
+            style={{ animationDelay: "1s", animationDuration: "3s" }}
+          />
+          <div
+            className="absolute bottom-8 right-8 w-2 h-2 bg-white rounded-full animate-ping"
+            style={{ animationDelay: "1.5s", animationDuration: "2.8s" }}
+          />
+          <div
+            className="absolute top-1/2 left-1/4 w-1 h-1 bg-white rounded-full animate-ping"
+            style={{ animationDelay: "2s", animationDuration: "2.2s" }}
+          />
+          <div
+            className="absolute top-1/3 right-1/3 w-2 h-2 bg-white rounded-full animate-ping"
+            style={{ animationDelay: "2.5s", animationDuration: "2.7s" }}
+          />
+        </>
+      )
+    case "electric-grid":
+      return (
+        <div className="absolute inset-0 opacity-40">
+          <div className="grid grid-cols-12 grid-rows-8 h-full w-full gap-px">
+            {Array.from({ length: 96 }).map((_, i) => (
+              <div
+                key={i}
+                className="border border-cyan-400/50 animate-pulse"
+                style={{ animationDelay: `${i * 0.05}s`, animationDuration: "2s" }}
+              />
+            ))}
+          </div>
+        </div>
+      )
+    case "morphing-blobs":
+      return (
+        <>
+          <div
+            className="absolute top-4 right-4 w-20 h-20 bg-white/30 rounded-full animate-pulse"
+            style={{ animationDuration: "3s" }}
+          />
+          <div
+            className="absolute bottom-4 left-4 w-16 h-16 bg-white/40 rounded-full animate-pulse"
+            style={{ animationDelay: "0.5s", animationDuration: "3.5s" }}
+          />
+          <div
+            className="absolute top-1/2 left-1/2 w-12 h-12 bg-white/25 rounded-full animate-pulse -translate-x-1/2 -translate-y-1/2"
+            style={{ animationDelay: "1s", animationDuration: "4s" }}
+          />
+        </>
+      )
     case "circuit-pulse":
       return (
-        <svg className="w-full h-full opacity-40" viewBox="0 0 400 300">
+        <svg className="w-full h-full opacity-60" viewBox="0 0 400 300">
           <path
             d="M50 50 L350 50 L350 250 L50 250 Z"
+            stroke="#10b981"
+            strokeWidth="3"
+            fill="none"
+            className="animate-pulse"
+            style={{ animationDuration: "2s" }}
+          />
+          <circle cx="100" cy="100" r="6" fill="#10b981" className="animate-ping" style={{ animationDuration: "2s" }} />
+          <circle
+            cx="300"
+            cy="200"
+            r="6"
+            fill="#10b981"
+            className="animate-ping"
+            style={{ animationDelay: "0.5s", animationDuration: "2.5s" }}
+          />
+          <path
+            d="M100 100 L200 150 L300 200"
             stroke="#10b981"
             strokeWidth="2"
             fill="none"
             className="animate-pulse"
-            style={{ animationDuration: "3s" }}
-          />
-          <circle cx="100" cy="100" r="4" fill="#10b981" className="animate-ping" style={{ animationDuration: "3s" }} />
-          <circle
-            cx="300"
-            cy="200"
-            r="4"
-            fill="#10b981"
-            className="animate-ping"
-            style={{ animationDelay: "0.5s", animationDuration: "3.5s" }}
+            style={{ animationDelay: "1s", animationDuration: "3s" }}
           />
         </svg>
       )
@@ -1260,30 +1328,720 @@ function getAnimationElements(id: string, prefersReducedMotion: boolean) {
         <>
           <div
             className="absolute top-0 left-8 w-px h-full bg-gradient-to-b from-green-400 to-transparent animate-pulse"
-            style={{ animationDuration: "3s" }}
+            style={{ animationDuration: "2s" }}
           />
           <div
             className="absolute top-0 left-16 w-px h-full bg-gradient-to-b from-green-400 to-transparent animate-pulse"
-            style={{ animationDelay: "0.3s", animationDuration: "3.5s" }}
+            style={{ animationDelay: "0.3s", animationDuration: "2.5s" }}
           />
           <div
             className="absolute top-0 left-24 w-px h-full bg-gradient-to-b from-green-400 to-transparent animate-pulse"
-            style={{ animationDelay: "0.6s", animationDuration: "4s" }}
+            style={{ animationDelay: "0.6s", animationDuration: "3s" }}
+          />
+          <div
+            className="absolute top-0 right-8 w-px h-full bg-gradient-to-b from-green-400 to-transparent animate-pulse"
+            style={{ animationDelay: "0.9s", animationDuration: "2.2s" }}
+          />
+          <div
+            className="absolute top-0 right-16 w-px h-full bg-gradient-to-b from-green-400 to-transparent animate-pulse"
+            style={{ animationDelay: "1.2s", animationDuration: "2.8s" }}
           />
         </>
       )
-    case "morphing-blobs":
+    case "holographic-display":
       return (
         <>
           <div
-            className="absolute top-4 right-4 w-16 h-16 bg-white/20 rounded-full animate-pulse"
-            style={{ animationDuration: "4s" }}
+            className="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-400/30 to-transparent animate-pulse"
+            style={{ animationDuration: "3s" }}
           />
           <div
-            className="absolute bottom-4 left-4 w-12 h-12 bg-white/30 rounded-full animate-pulse"
-            style={{ animationDelay: "0.5s", animationDuration: "4.5s" }}
+            className="absolute top-0 left-0 w-full h-px bg-cyan-400 animate-pulse"
+            style={{ animationDuration: "2s" }}
+          />
+          <div
+            className="absolute bottom-0 left-0 w-full h-px bg-cyan-400 animate-pulse"
+            style={{ animationDelay: "0.5s", animationDuration: "2.5s" }}
+          />
+          <div
+            className="absolute left-0 top-0 w-px h-full bg-cyan-400/50 animate-pulse"
+            style={{ animationDelay: "1s", animationDuration: "3s" }}
+          />
+          <div
+            className="absolute right-0 top-0 w-px h-full bg-cyan-400/50 animate-pulse"
+            style={{ animationDelay: "1.5s", animationDuration: "2.8s" }}
           />
         </>
+      )
+    case "data-stream":
+      return (
+        <>
+          <div
+            className="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-400 to-transparent animate-pulse"
+            style={{ animationDuration: "2s" }}
+          />
+          <div
+            className="absolute top-2/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-purple-400 to-transparent animate-pulse"
+            style={{ animationDelay: "0.3s", animationDuration: "2.5s" }}
+          />
+          <div
+            className="absolute top-3/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyan-400 to-transparent animate-pulse"
+            style={{ animationDelay: "0.6s", animationDuration: "3s" }}
+          />
+          <div
+            className="absolute top-8 left-8 w-2 h-2 bg-blue-400 rounded-full animate-ping"
+            style={{ animationDuration: "2s" }}
+          />
+          <div
+            className="absolute bottom-8 right-8 w-2 h-2 bg-purple-400 rounded-full animate-ping"
+            style={{ animationDelay: "0.5s", animationDuration: "2.5s" }}
+          />
+        </>
+      )
+    case "cyber-grid":
+      return (
+        <div className="absolute inset-0 opacity-50">
+          <div className="grid grid-cols-16 grid-rows-12 h-full w-full gap-px">
+            {Array.from({ length: 192 }).map((_, i) => (
+              <div
+                key={i}
+                className="border border-red-400/40 animate-pulse"
+                style={{ animationDelay: `${i * 0.02}s`, animationDuration: "2s" }}
+              />
+            ))}
+          </div>
+        </div>
+      )
+    case "neon-circuit":
+      return (
+        <svg className="w-full h-full" viewBox="0 0 400 300">
+          <path
+            d="M0 150 L100 150 L100 100 L300 100 L300 200 L400 200"
+            stroke="#ff00ff"
+            strokeWidth="3"
+            fill="none"
+            className="animate-pulse"
+            style={{ filter: "drop-shadow(0 0 10px #ff00ff)", animationDuration: "2s" }}
+          />
+          <circle
+            cx="100"
+            cy="150"
+            r="6"
+            fill="#ff00ff"
+            className="animate-ping"
+            style={{ filter: "drop-shadow(0 0 10px #ff00ff)", animationDuration: "2s" }}
+          />
+          <circle
+            cx="300"
+            cy="100"
+            r="6"
+            fill="#00ffff"
+            className="animate-ping"
+            style={{ animationDelay: "0.5s", filter: "drop-shadow(0 0 10px #00ffff)", animationDuration: "2.5s" }}
+          />
+          <path
+            d="M50 50 L350 250"
+            stroke="#ff00ff"
+            strokeWidth="2"
+            fill="none"
+            className="animate-pulse"
+            style={{ animationDelay: "1s", animationDuration: "3s" }}
+          />
+        </svg>
+      )
+    case "quantum-field":
+      return (
+        <>
+          <div
+            className="absolute top-8 left-8 w-3 h-3 bg-purple-400 rounded-full animate-ping"
+            style={{ animationDuration: "2s" }}
+          />
+          <div
+            className="absolute top-16 right-12 w-2 h-2 bg-indigo-400 rounded-full animate-ping"
+            style={{ animationDelay: "0.3s", animationDuration: "2.5s" }}
+          />
+          <div
+            className="absolute bottom-12 left-16 w-4 h-4 bg-pink-400 rounded-full animate-ping"
+            style={{ animationDelay: "0.6s", animationDuration: "3s" }}
+          />
+          <div
+            className="absolute bottom-8 right-8 w-2 h-2 bg-cyan-400 rounded-full animate-ping"
+            style={{ animationDelay: "0.9s", animationDuration: "2.8s" }}
+          />
+          <div
+            className="absolute top-1/2 left-1/2 w-1 h-1 bg-white rounded-full animate-ping -translate-x-1/2 -translate-y-1/2"
+            style={{ animationDelay: "1.2s", animationDuration: "2.2s" }}
+          />
+        </>
+      )
+    case "wave-motion":
+      return (
+        <svg className="w-full h-full" viewBox="0 0 400 300" preserveAspectRatio="none">
+          <path
+            d="M0,150 Q100,100 200,150 T400,150 L400,300 L0,300 Z"
+            fill="rgba(255,255,255,0.2)"
+            className="animate-pulse"
+            style={{ animationDuration: "3s" }}
+          />
+          <path
+            d="M0,180 Q100,130 200,180 T400,180 L400,300 L0,300 Z"
+            fill="rgba(255,255,255,0.1)"
+            className="animate-pulse"
+            style={{ animationDelay: "0.5s", animationDuration: "3.5s" }}
+          />
+          <path
+            d="M0,120 Q100,70 200,120 T400,120 L400,300 L0,300 Z"
+            fill="rgba(255,255,255,0.15)"
+            className="animate-pulse"
+            style={{ animationDelay: "1s", animationDuration: "4s" }}
+          />
+        </svg>
+      )
+    case "particle-flow":
+      return (
+        <>
+          <div
+            className="absolute top-4 left-4 w-2 h-2 bg-white rounded-full animate-bounce"
+            style={{ animationDuration: "2s" }}
+          />
+          <div
+            className="absolute top-8 left-12 w-1 h-1 bg-white rounded-full animate-bounce"
+            style={{ animationDelay: "0.2s", animationDuration: "2.5s" }}
+          />
+          <div
+            className="absolute top-12 left-20 w-2 h-2 bg-white rounded-full animate-bounce"
+            style={{ animationDelay: "0.4s", animationDuration: "3s" }}
+          />
+          <div
+            className="absolute top-16 left-28 w-1 h-1 bg-white rounded-full animate-bounce"
+            style={{ animationDelay: "0.6s", animationDuration: "2.8s" }}
+          />
+          <div
+            className="absolute bottom-4 right-4 w-2 h-2 bg-white rounded-full animate-bounce"
+            style={{ animationDelay: "0.8s", animationDuration: "2.2s" }}
+          />
+          <div
+            className="absolute bottom-8 right-12 w-1 h-1 bg-white rounded-full animate-bounce"
+            style={{ animationDelay: "1s", animationDuration: "2.7s" }}
+          />
+        </>
+      )
+    case "aurora-borealis":
+      return (
+        <>
+          <div
+            className="absolute inset-0 bg-gradient-to-r from-transparent via-green-400/40 to-transparent animate-pulse"
+            style={{ transform: "skewY(-10deg)", animationDuration: "4s" }}
+          />
+          <div
+            className="absolute inset-0 bg-gradient-to-r from-transparent via-purple-400/30 to-transparent animate-pulse"
+            style={{ transform: "skewY(5deg)", animationDelay: "0.5s", animationDuration: "4.5s" }}
+          />
+          <div
+            className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-400/20 to-transparent animate-pulse"
+            style={{ transform: "skewY(-5deg)", animationDelay: "1s", animationDuration: "5s" }}
+          />
+        </>
+      )
+    case "crystal-formation":
+      return (
+        <>
+          <div
+            className="absolute top-8 left-8 w-0 h-0 border-l-8 border-r-8 border-b-16 border-l-transparent border-r-transparent border-b-white/40 animate-pulse"
+            style={{ animationDuration: "2s" }}
+          />
+          <div
+            className="absolute top-16 right-12 w-0 h-0 border-l-6 border-r-6 border-b-12 border-l-transparent border-r-transparent border-b-white/30 animate-pulse"
+            style={{ animationDelay: "0.3s", animationDuration: "2.5s" }}
+          />
+          <div
+            className="absolute bottom-12 left-16 w-0 h-0 border-l-10 border-r-10 border-b-20 border-l-transparent border-r-transparent border-b-white/35 animate-pulse"
+            style={{ animationDelay: "0.6s", animationDuration: "3s" }}
+          />
+          <div
+            className="absolute bottom-8 right-8 w-0 h-0 border-l-4 border-r-4 border-b-8 border-l-transparent border-r-transparent border-b-white/25 animate-pulse"
+            style={{ animationDelay: "0.9s", animationDuration: "2.8s" }}
+          />
+        </>
+      )
+    case "liquid-mercury":
+      return (
+        <>
+          <div
+            className="absolute top-1/3 left-0 w-full h-16 bg-gradient-to-r from-transparent via-gray-400/50 to-transparent animate-pulse"
+            style={{ borderRadius: "50%", animationDuration: "3s" }}
+          />
+          <div
+            className="absolute bottom-1/3 left-0 w-full h-12 bg-gradient-to-r from-transparent via-gray-400/40 to-transparent animate-pulse"
+            style={{ borderRadius: "50%", animationDelay: "0.5s", animationDuration: "3.5s" }}
+          />
+          <div
+            className="absolute top-1/2 left-0 w-full h-8 bg-gradient-to-r from-transparent via-gray-300/30 to-transparent animate-pulse"
+            style={{ borderRadius: "50%", animationDelay: "1s", animationDuration: "4s" }}
+          />
+        </>
+      )
+    case "plasma-energy":
+      return (
+        <>
+          <div
+            className="absolute top-1/2 left-1/2 w-32 h-32 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-r from-purple-400 to-pink-400 animate-pulse"
+            style={{ filter: "blur(20px)", animationDuration: "2s" }}
+          />
+          <div
+            className="absolute top-1/2 left-1/2 w-16 h-16 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white animate-ping"
+            style={{ animationDuration: "2.5s" }}
+          />
+          <div
+            className="absolute top-1/2 left-1/2 w-8 h-8 -translate-x-1/2 -translate-y-1/2 rounded-full bg-purple-300 animate-ping"
+            style={{ animationDelay: "0.5s", animationDuration: "3s" }}
+          />
+        </>
+      )
+    case "typing-effect":
+      return (
+        <div className="absolute top-4 left-4 text-green-400 font-mono text-xs">
+          <span className="animate-pulse">&gt; initializing...</span>
+        </div>
+      )
+    case "constellation":
+      return (
+        <svg className="w-full h-full" viewBox="0 0 400 300">
+          <circle cx="100" cy="100" r="2" fill="white" className="animate-pulse" style={{ animationDuration: "2s" }} />
+          <circle
+            cx="200"
+            cy="80"
+            r="2"
+            fill="white"
+            className="animate-pulse"
+            style={{ animationDelay: "0.2s", animationDuration: "2.5s" }}
+          />
+          <circle
+            cx="300"
+            cy="120"
+            r="2"
+            fill="white"
+            className="animate-pulse"
+            style={{ animationDelay: "0.4s", animationDuration: "3s" }}
+          />
+          <circle
+            cx="150"
+            cy="200"
+            r="2"
+            fill="white"
+            className="animate-pulse"
+            style={{ animationDelay: "0.6s", animationDuration: "2.8s" }}
+          />
+          <line
+            x1="100"
+            y1="100"
+            x2="200"
+            y2="80"
+            stroke="white"
+            strokeWidth="1"
+            opacity="0.5"
+            className="animate-pulse"
+            style={{ animationDuration: "3s" }}
+          />
+          <line
+            x1="200"
+            y1="80"
+            x2="300"
+            y2="120"
+            stroke="white"
+            strokeWidth="1"
+            opacity="0.5"
+            className="animate-pulse"
+            style={{ animationDelay: "0.3s", animationDuration: "3.5s" }}
+          />
+          <line
+            x1="150"
+            y1="200"
+            x2="300"
+            y2="120"
+            stroke="white"
+            strokeWidth="1"
+            opacity="0.5"
+            className="animate-pulse"
+            style={{ animationDelay: "0.6s", animationDuration: "4s" }}
+          />
+        </svg>
+      )
+    case "minimal-gradient":
+      return (
+        <div
+          className="absolute inset-0 bg-gradient-to-tr from-transparent to-white/30 animate-pulse"
+          style={{ animationDuration: "4s" }}
+        />
+      )
+    case "paper-fold":
+      return (
+        <>
+          <div
+            className="absolute top-8 left-8 w-16 h-16 bg-white/70 transform rotate-45 animate-pulse"
+            style={{ animationDuration: "3s" }}
+          />
+          <div
+            className="absolute top-16 right-12 w-12 h-12 bg-white/50 transform -rotate-12 animate-pulse"
+            style={{ animationDelay: "0.3s", animationDuration: "3.5s" }}
+          />
+          <div
+            className="absolute bottom-12 left-16 w-20 h-20 bg-white/60 transform rotate-12 animate-pulse"
+            style={{ animationDelay: "0.6s", animationDuration: "4s" }}
+          />
+          <div
+            className="absolute bottom-8 right-8 w-8 h-8 bg-white/40 transform rotate-30 animate-pulse"
+            style={{ animationDelay: "0.9s", animationDuration: "3.2s" }}
+          />
+        </>
+      )
+    case "ink-splash":
+      return (
+        <>
+          <div
+            className="absolute top-8 left-8 w-24 h-24 bg-black/30 rounded-full animate-pulse"
+            style={{
+              clipPath: "polygon(50% 0%, 80% 10%, 100% 35%, 85% 70%, 50% 100%, 15% 70%, 0% 35%, 20% 10%)",
+              animationDuration: "3s",
+            }}
+          />
+          <div
+            className="absolute bottom-12 right-16 w-16 h-16 bg-black/20 rounded-full animate-pulse"
+            style={{
+              clipPath: "polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%)",
+              animationDelay: "0.5s",
+              animationDuration: "3.5s",
+            }}
+          />
+          <div
+            className="absolute top-1/2 left-1/2 w-12 h-12 bg-black/25 rounded-full animate-pulse -translate-x-1/2 -translate-y-1/2"
+            style={{
+              clipPath: "polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)",
+              animationDelay: "1s",
+              animationDuration: "4s",
+            }}
+          />
+        </>
+      )
+    case "glass-morphism":
+      return (
+        <>
+          <div
+            className="absolute top-8 left-8 w-32 h-32 bg-white/30 backdrop-blur-sm rounded-2xl animate-pulse"
+            style={{ animationDuration: "3s" }}
+          />
+          <div
+            className="absolute bottom-12 right-16 w-24 h-24 bg-white/20 backdrop-blur-sm rounded-2xl animate-pulse"
+            style={{ animationDelay: "0.5s", animationDuration: "3.5s" }}
+          />
+          <div
+            className="absolute top-1/2 right-8 w-16 h-16 bg-white/25 backdrop-blur-sm rounded-2xl animate-pulse"
+            style={{ animationDelay: "1s", animationDuration: "4s" }}
+          />
+        </>
+      )
+    case "retro-grid":
+      return (
+        <div className="absolute inset-0" style={{ perspective: "1000px" }}>
+          <div
+            className="absolute inset-0 bg-gradient-to-b from-transparent to-purple-500/30"
+            style={{ transform: "rotateX(60deg) translateZ(-100px)" }}
+          >
+            <div className="grid grid-cols-20 grid-rows-20 h-full w-full gap-px opacity-60">
+              {Array.from({ length: 400 }).map((_, i) => (
+                <div
+                  key={i}
+                  className="border border-pink-400/40 animate-pulse"
+                  style={{ animationDelay: `${i * 0.01}s`, animationDuration: "2s" }}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      )
+    case "vhs-glitch":
+      return (
+        <>
+          <div
+            className="absolute inset-0 bg-gradient-to-b from-transparent via-red-500/20 to-transparent animate-pulse"
+            style={{ animationDuration: "2s" }}
+          />
+          <div
+            className="absolute top-0 left-0 w-full h-px bg-white/30 animate-pulse"
+            style={{ animationDelay: "0.1s", animationDuration: "2.5s" }}
+          />
+          <div
+            className="absolute top-4 left-0 w-full h-px bg-white/30 animate-pulse"
+            style={{ animationDelay: "0.2s", animationDuration: "3s" }}
+          />
+          <div
+            className="absolute top-8 left-0 w-full h-px bg-white/30 animate-pulse"
+            style={{ animationDelay: "0.3s", animationDuration: "2.8s" }}
+          />
+          <div
+            className="absolute top-12 left-0 w-full h-px bg-white/30 animate-pulse"
+            style={{ animationDelay: "0.4s", animationDuration: "3.2s" }}
+          />
+          <div
+            className="absolute top-16 left-0 w-full h-px bg-white/30 animate-pulse"
+            style={{ animationDelay: "0.5s", animationDuration: "2.7s" }}
+          />
+        </>
+      )
+    case "neon-sign":
+      return (
+        <>
+          <div
+            className="absolute top-8 left-8 w-4 h-4 bg-pink-400 rounded-full animate-ping"
+            style={{ filter: "blur(2px) drop-shadow(0 0 10px #ff1493)", animationDuration: "2s" }}
+          />
+          <div
+            className="absolute top-16 right-12 w-3 h-3 bg-cyan-400 rounded-full animate-ping"
+            style={{
+              animationDelay: "0.3s",
+              filter: "blur(2px) drop-shadow(0 0 10px #00ffff)",
+              animationDuration: "2.5s",
+            }}
+          />
+          <div
+            className="absolute bottom-12 left-16 w-5 h-5 bg-yellow-400 rounded-full animate-ping"
+            style={{
+              animationDelay: "0.6s",
+              filter: "blur(2px) drop-shadow(0 0 10px #ffff00)",
+              animationDuration: "3s",
+            }}
+          />
+          <div
+            className="absolute bottom-8 right-8 w-2 h-2 bg-green-400 rounded-full animate-ping"
+            style={{
+              animationDelay: "0.9s",
+              filter: "blur(2px) drop-shadow(0 0 10px #00ff00)",
+              animationDuration: "2.8s",
+            }}
+          />
+          <div
+            className="absolute top-1/2 left-1/2 w-3 h-3 bg-purple-400 rounded-full animate-ping -translate-x-1/2 -translate-y-1/2"
+            style={{
+              animationDelay: "1.2s",
+              filter: "blur(2px) drop-shadow(0 0 10px #8a2be2)",
+              animationDuration: "2.2s",
+            }}
+          />
+        </>
+      )
+    case "synthwave-sunset":
+      return (
+        <>
+          <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black/60 to-transparent" />
+          <svg className="absolute bottom-0 w-full h-1/2" viewBox="0 0 400 150" preserveAspectRatio="none">
+            <path
+              d="M0,75 Q100,50 200,75 T400,75 L400,150 L0,150 Z"
+              fill="url(#gradient)"
+              opacity="0.8"
+              className="animate-pulse"
+              style={{ animationDuration: "4s" }}
+            />
+            <defs>
+              <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stopColor="#ff00ff" />
+                <stop offset="100%" stopColor="#000000" />
+              </linearGradient>
+            </defs>
+          </svg>
+          <div
+            className="absolute top-8 left-8 w-2 h-2 bg-pink-400 rounded-full animate-ping"
+            style={{ animationDuration: "3s" }}
+          />
+          <div
+            className="absolute top-12 right-12 w-1 h-1 bg-purple-400 rounded-full animate-ping"
+            style={{ animationDelay: "0.5s", animationDuration: "3.5s" }}
+          />
+        </>
+      )
+    case "arcade-cabinet":
+      return (
+        <>
+          <div
+            className="absolute top-8 left-8 w-8 h-8 bg-yellow-400 animate-pulse"
+            style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)", animationDuration: "2s" }}
+          />
+          <div
+            className="absolute top-8 left-20 w-8 h-8 bg-red-400 animate-pulse"
+            style={{ animationDelay: "0.2s", animationDuration: "2.5s" }}
+          />
+          <div
+            className="absolute top-8 left-32 w-8 h-8 bg-green-400 animate-pulse"
+            style={{ animationDelay: "0.4s", animationDuration: "3s" }}
+          />
+          <div
+            className="absolute top-20 left-8 w-8 h-8 bg-blue-400 animate-pulse"
+            style={{ animationDelay: "0.6s", animationDuration: "2.8s" }}
+          />
+          <div
+            className="absolute top-20 left-20 w-8 h-8 bg-purple-400 animate-pulse"
+            style={{ animationDelay: "0.8s", animationDuration: "2.2s" }}
+          />
+          <div
+            className="absolute top-20 left-32 w-8 h-8 bg-orange-400 animate-pulse"
+            style={{ animationDelay: "1s", animationDuration: "2.7s" }}
+          />
+        </>
+      )
+    case "cassette-tape":
+      return (
+        <>
+          <div
+            className="absolute top-1/2 left-1/4 w-16 h-16 -translate-y-1/2 border-4 border-white/40 rounded-full animate-spin"
+            style={{ animationDuration: "3s" }}
+          />
+          <div
+            className="absolute top-1/2 right-1/4 w-16 h-16 -translate-y-1/2 border-4 border-white/40 rounded-full animate-spin"
+            style={{ animationDuration: "3s", animationDirection: "reverse" }}
+          />
+          <div className="absolute top-1/2 left-1/4 right-1/4 h-1 bg-amber-600 -translate-y-1/2" />
+          <div
+            className="absolute top-1/2 left-1/4 w-4 h-4 -translate-y-1/2 bg-white/60 rounded-full animate-spin"
+            style={{ animationDuration: "1s" }}
+          />
+          <div
+            className="absolute top-1/2 right-1/4 w-4 h-4 -translate-y-1/2 bg-white/60 rounded-full animate-spin"
+            style={{ animationDuration: "1s", animationDirection: "reverse" }}
+          />
+        </>
+      )
+    case "paint-strokes":
+      return (
+        <>
+          <div
+            className="absolute top-8 left-8 w-32 h-4 bg-red-400/70 transform -rotate-12 animate-pulse"
+            style={{ borderRadius: "50px", animationDuration: "3s" }}
+          />
+          <div
+            className="absolute top-20 right-16 w-24 h-6 bg-blue-400/70 transform rotate-6 animate-pulse"
+            style={{ borderRadius: "50px", animationDelay: "0.3s", animationDuration: "3.5s" }}
+          />
+          <div
+            className="absolute bottom-16 left-20 w-40 h-3 bg-yellow-400/70 transform -rotate-3 animate-pulse"
+            style={{ borderRadius: "50px", animationDelay: "0.6s", animationDuration: "4s" }}
+          />
+          <div
+            className="absolute bottom-8 right-8 w-20 h-5 bg-green-400/70 transform rotate-8 animate-pulse"
+            style={{ borderRadius: "50px", animationDelay: "0.9s", animationDuration: "3.2s" }}
+          />
+        </>
+      )
+    case "kaleidoscope":
+      return (
+        <div
+          className="absolute top-1/2 left-1/2 w-32 h-32 -translate-x-1/2 -translate-y-1/2 animate-spin"
+          style={{ animationDuration: "10s" }}
+        >
+          <div className="absolute top-0 left-1/2 w-0 h-0 border-l-8 border-r-8 border-b-16 border-l-transparent border-r-transparent border-b-white/50 -translate-x-1/2" />
+          <div className="absolute top-0 left-1/2 w-0 h-0 border-l-8 border-r-8 border-b-16 border-l-transparent border-r-transparent border-b-white/50 -translate-x-1/2 rotate-60" />
+          <div className="absolute top-0 left-1/2 w-0 h-0 border-l-8 border-r-8 border-b-16 border-l-transparent border-r-transparent border-b-white/50 -translate-x-1/2 rotate-120" />
+          <div className="absolute top-0 left-1/2 w-0 h-0 border-l-8 border-r-8 border-b-16 border-l-transparent border-r-transparent border-b-white/50 -translate-x-1/2 rotate-180" />
+          <div className="absolute top-0 left-1/2 w-0 h-0 border-l-8 border-r-8 border-b-16 border-l-transparent border-r-transparent border-b-white/50 -translate-x-1/2 rotate-240" />
+          <div className="absolute top-0 left-1/2 w-0 h-0 border-l-8 border-r-8 border-b-16 border-l-transparent border-r-transparent border-b-white/50 -translate-x-1/2 rotate-300" />
+        </div>
+      )
+    case "watercolor-blend":
+      return (
+        <>
+          <div
+            className="absolute top-8 left-8 w-24 h-24 bg-blue-300/60 rounded-full animate-pulse"
+            style={{ filter: "blur(10px)", animationDuration: "3s" }}
+          />
+          <div
+            className="absolute top-16 right-12 w-32 h-32 bg-purple-300/50 rounded-full animate-pulse"
+            style={{ filter: "blur(15px)", animationDelay: "0.5s", animationDuration: "3.5s" }}
+          />
+          <div
+            className="absolute bottom-12 left-16 w-20 h-20 bg-pink-300/70 rounded-full animate-pulse"
+            style={{ filter: "blur(8px)", animationDelay: "1s", animationDuration: "4s" }}
+          />
+          <div
+            className="absolute bottom-8 right-8 w-16 h-16 bg-cyan-300/40 rounded-full animate-pulse"
+            style={{ filter: "blur(12px)", animationDelay: "1.5s", animationDuration: "3.2s" }}
+          />
+        </>
+      )
+    case "geometric-mandala":
+      return (
+        <div
+          className="absolute top-1/2 left-1/2 w-40 h-40 -translate-x-1/2 -translate-y-1/2 animate-spin"
+          style={{ animationDuration: "20s" }}
+        >
+          <div className="absolute inset-0 border-2 border-white/40 rounded-full" />
+          <div className="absolute inset-4 border-2 border-white/30 rounded-full" />
+          <div className="absolute inset-8 border-2 border-white/20 rounded-full" />
+          <div className="absolute inset-12 border-2 border-white/10 rounded-full" />
+          <div className="absolute top-1/2 left-0 w-full h-px bg-white/30" />
+          <div className="absolute top-0 left-1/2 w-px h-full bg-white/30" />
+          <div className="absolute top-1/2 left-0 w-full h-px bg-white/20 transform rotate-45" />
+          <div className="absolute top-1/2 left-0 w-full h-px bg-white/20 transform -rotate-45" />
+        </div>
+      )
+    case "abstract-shapes":
+      return (
+        <>
+          <div
+            className="absolute top-8 left-8 w-16 h-24 bg-white/40 transform rotate-45 animate-pulse"
+            style={{ borderRadius: "30% 70% 70% 30% / 30% 30% 70% 70%", animationDuration: "3s" }}
+          />
+          <div
+            className="absolute top-20 right-12 w-20 h-16 bg-white/35 transform -rotate-12 animate-pulse"
+            style={{
+              borderRadius: "70% 30% 30% 70% / 70% 70% 30% 30%",
+              animationDelay: "0.3s",
+              animationDuration: "3.5s",
+            }}
+          />
+          <div
+            className="absolute bottom-12 left-20 w-24 h-20 bg-white/45 transform rotate-30 animate-pulse"
+            style={{
+              borderRadius: "50% 50% 50% 50% / 60% 40% 60% 40%",
+              animationDelay: "0.6s",
+              animationDuration: "4s",
+            }}
+          />
+          <div
+            className="absolute bottom-8 right-8 w-12 h-18 bg-white/30 transform -rotate-20 animate-pulse"
+            style={{
+              borderRadius: "40% 60% 60% 40% / 40% 40% 60% 60%",
+              animationDelay: "0.9s",
+              animationDuration: "3.2s",
+            }}
+          />
+        </>
+      )
+    case "spiral-galaxy":
+      return (
+        <div
+          className="absolute top-1/2 left-1/2 w-48 h-48 -translate-x-1/2 -translate-y-1/2 animate-spin"
+          style={{ animationDuration: "30s" }}
+        >
+          <div className="absolute top-1/2 left-1/2 w-2 h-2 bg-white rounded-full -translate-x-1/2 -translate-y-1/2" />
+          <div
+            className="absolute top-1/4 left-1/2 w-1 h-1 bg-blue-300 rounded-full animate-pulse"
+            style={{ animationDuration: "2s" }}
+          />
+          <div
+            className="absolute top-3/4 left-1/4 w-1 h-1 bg-purple-300 rounded-full animate-pulse"
+            style={{ animationDelay: "0.5s", animationDuration: "2.5s" }}
+          />
+          <div
+            className="absolute top-1/4 right-1/4 w-1 h-1 bg-pink-300 rounded-full animate-pulse"
+            style={{ animationDelay: "1s", animationDuration: "3s" }}
+          />
+          <div
+            className="absolute bottom-1/4 right-1/2 w-1 h-1 bg-cyan-300 rounded-full animate-pulse"
+            style={{ animationDelay: "1.5s", animationDuration: "2.8s" }}
+          />
+          <div
+            className="absolute top-1/3 left-1/3 w-1 h-1 bg-yellow-300 rounded-full animate-pulse"
+            style={{ animationDelay: "2s", animationDuration: "2.2s" }}
+          />
+        </div>
       )
     default:
       return null
