@@ -1,30 +1,5 @@
-# Animated header suggestions
-
-*Automatically synced with your [v0.dev](https://v0.dev) deployments*
-
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/maesangaline-6672s-projects/v0-animated-header-suggestions)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.dev-black?style=for-the-badge)](https://v0.dev/chat/projects/HOTyPOFMT3d)
+# Above the fold
 
 ## Overview
 
-This repository will stay in sync with your deployed chats on [v0.dev](https://v0.dev).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.dev](https://v0.dev).
-
-## Deployment
-
-Your project is live at:
-
-**[https://vercel.com/maesangaline-6672s-projects/v0-animated-header-suggestions](https://vercel.com/maesangaline-6672s-projects/v0-animated-header-suggestions)**
-
-## Build your app
-
-Continue building your app on:
-
-**[https://v0.dev/chat/projects/HOTyPOFMT3d](https://v0.dev/chat/projects/HOTyPOFMT3d)**
-
-## How It Works
-
-1. Create and modify your project using [v0.dev](https://v0.dev)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+A tool to make header creation a breeze. Browse a list of animated headers and then fork your favorite to start building your own page with it.
