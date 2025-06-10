@@ -63,31 +63,39 @@ const GradientWave = ({ isFullView = false }: { isFullView?: boolean }) => (
   </div>
 )
 
-const FloatingParticles = ({ isFullView = false }: { isFullView?: boolean }) => (
-  <div className={`relative overflow-hidden bg-gradient-to-br from-indigo-900 to-purple-900 ${isFullView ? 'h-64' : 'h-32'} rounded-md flex items-center justify-center`}>
-    {[...Array(isFullView ? 20 : 8)].map((_, i) => (
-      <div
-        key={i}
-        className="absolute w-2 h-2 bg-white rounded-full opacity-70"
-        style={{
-          left: `${Math.random() * 100}%`,
-          top: `${Math.random() * 100}%`,
-          animation: `float ${2 + Math.random() * 3}s ease-in-out infinite`,
-          animationDelay: `${Math.random() * 2}s`
-        }}
-      />
-    ))}
-    <h2 className={`relative z-10 text-white font-bold ${isFullView ? 'text-4xl' : 'text-xl'}`}>
-      Floating Particles
-    </h2>
-    <style jsx>{`
-      @keyframes float {
-        0%, 100% { transform: translateY(0px) rotate(0deg); }
-        50% { transform: translateY(-20px) rotate(180deg); }
-      }
-    `}</style>
-  </div>
-)
+const FloatingParticles = ({ isFullView = false }: { isFullView?: boolean }) => {
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  return (
+    <div className={`relative overflow-hidden bg-gradient-to-br from-indigo-900 to-purple-900 ${isFullView ? 'h-64' : 'h-32'} rounded-md flex items-center justify-center`}>
+      {mounted && [...Array(isFullView ? 20 : 8)].map((_, i) => (
+        <div
+          key={i}
+          className="absolute w-2 h-2 bg-white rounded-full opacity-70"
+          style={{
+            left: `${Math.random() * 100}%`,
+            top: `${Math.random() * 100}%`,
+            animation: `float ${2 + Math.random() * 3}s ease-in-out infinite`,
+            animationDelay: `${Math.random() * 2}s`
+          }}
+        />
+      ))}
+      <h2 className={`relative z-10 text-white font-bold ${isFullView ? 'text-4xl' : 'text-xl'}`}>
+        Floating Particles
+      </h2>
+      <style jsx>{`
+        @keyframes float {
+          0%, 100% { transform: translateY(0px) rotate(0deg); }
+          50% { transform: translateY(-20px) rotate(180deg); }
+        }
+      `}</style>
+    </div>
+  )
+}
 
 const TypingAnimation = ({ isFullView = false }: { isFullView?: boolean }) => {
   const [text, setText] = useState("")
@@ -157,32 +165,40 @@ const NeonGlow = ({ isFullView = false }: { isFullView?: boolean }) => (
   </div>
 )
 
-const MatrixRain = ({ isFullView = false }: { isFullView?: boolean }) => (
-  <div className={`relative overflow-hidden bg-black ${isFullView ? 'h-64' : 'h-32'} rounded-md flex items-center justify-center`}>
-    {[...Array(isFullView ? 15 : 6)].map((_, i) => (
-      <div
-        key={i}
-        className="absolute top-0 text-green-400 font-mono text-sm opacity-70"
-        style={{
-          left: `${i * (100 / (isFullView ? 15 : 6))}%`,
-          animation: `matrix ${1 + Math.random() * 2}s linear infinite`,
-          animationDelay: `${Math.random() * 2}s`
-        }}
-      >
-        {Array.from({ length: 10 }, () => String.fromCharCode(0x30A0 + Math.random() * 96)).join('')}
-      </div>
-    ))}
-    <h2 className={`relative z-10 text-green-400 font-mono font-bold ${isFullView ? 'text-4xl' : 'text-xl'}`}>
-      MATRIX RAIN
-    </h2>
-    <style jsx>{`
-      @keyframes matrix {
-        0% { transform: translateY(-100%); }
-        100% { transform: translateY(200%); }
-      }
-    `}</style>
-  </div>
-)
+const MatrixRain = ({ isFullView = false }: { isFullView?: boolean }) => {
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  return (
+    <div className={`relative overflow-hidden bg-black ${isFullView ? 'h-64' : 'h-32'} rounded-md flex items-center justify-center`}>
+      {mounted && [...Array(isFullView ? 15 : 6)].map((_, i) => (
+        <div
+          key={i}
+          className="absolute top-0 text-green-400 font-mono text-sm opacity-70"
+          style={{
+            left: `${i * (100 / (isFullView ? 15 : 6))}%`,
+            animation: `matrix ${1 + Math.random() * 2}s linear infinite`,
+            animationDelay: `${Math.random() * 2}s`
+          }}
+        >
+          {Array.from({ length: 10 }, () => String.fromCharCode(0x30A0 + Math.random() * 96)).join('')}
+        </div>
+      ))}
+      <h2 className={`relative z-10 text-green-400 font-mono font-bold ${isFullView ? 'text-4xl' : 'text-xl'}`}>
+        MATRIX RAIN
+      </h2>
+      <style jsx>{`
+        @keyframes matrix {
+          0% { transform: translateY(-100%); }
+          100% { transform: translateY(200%); }
+        }
+      `}</style>
+    </div>
+  )
+}
 
 const HeaderComponent = ({ component, isFullView = false }: { component: string, isFullView?: boolean }) => {
   switch (component) {
