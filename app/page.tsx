@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
@@ -93,7 +93,7 @@ const TypingAnimation = ({ isFullView = false }: { isFullView?: boolean }) => {
   const [text, setText] = useState("")
   const fullText = "Welcome to the Future"
   
-  useState(() => {
+  useEffect(() => {
     let index = 0
     const timer = setInterval(() => {
       setText(fullText.slice(0, index))
@@ -103,7 +103,7 @@ const TypingAnimation = ({ isFullView = false }: { isFullView?: boolean }) => {
       }
     }, 150)
     return () => clearInterval(timer)
-  })
+  }, [fullText])
 
   return (
     <div className={`relative overflow-hidden bg-gradient-to-r from-green-800 to-emerald-600 ${isFullView ? 'h-64' : 'h-32'} rounded-md flex items-center justify-center`}>
